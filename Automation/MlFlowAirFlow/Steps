@@ -1,0 +1,21 @@
+1. Install Airflow: 
+pip install apache-airflow
+
+2. Initialize Airflow Database: Initialize the database where Airflow stores its metadata
+airflow db init
+
+3. Start the Airflow Webserver and Scheduler: Start the Airflow webserver and scheduler
+airflow webserver --port 8080
+
+4. Create a DAGs Folder 'dags'
+
+5. Place the DAG File: Place the Python script containing your Airflow DAG (mlflow_airflow_example.py) inside the DAGs folder you created in the previous step.
+
+6. Verify DAG Execution: After you've placed the DAG file in the DAGs folder, Airflow will automatically detect it and start scheduling its tasks according to the specified schedule interval (@daily in this case).
+
+7. Monitor DAG Execution: You can monitor the execution of the DAG and its tasks from the Airflow UI (http://localhost:8080). You should see your DAG listed on the UI, and you can click on it to view its status, task instances, and logs.
+
+(Optional) Trigger DAG Execution: If you want to trigger the DAG manually instead of waiting for the next scheduled run, you can do so from the Airflow UI by clicking the "Trigger DAG" button.
+
+Add Username and password:
+airflow users  create --role Admin --username admin --email admin --firstname admin --lastname admin --password admin
